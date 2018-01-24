@@ -9,7 +9,7 @@ current directory into one of several *stylized* document formats, customized
 using Pandoc's support for custom templates. This includes
 
 - -> stylized LaTeX Beamer presentations (via `templates/custom.beamer`),
-- -> stylized default LaTeX manuscripts (via `templates/custom.latex`),
+- -> stylized LaTeX manuscripts (via `templates/custom.latex`),
 - -> stylized double-column LaTeX manuscripts (via
   `templates/custom-double.latex`), and
 - -> stylized HTML presentations using
@@ -82,6 +82,11 @@ using Pandoc's support for custom templates. This includes
        and
     2. the build process will **fail** if you do not have a file of that type
        present.
+
+## Examples
+
+At [@edeno](https://github.com/edeno)'s forceful insistence, I have included
+some examples of what the outputs look like in the `examples` folder.
 
 ## Customization / styling
 

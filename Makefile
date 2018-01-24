@@ -3,7 +3,7 @@ beamer:
 		--slide-level=2 --toc \
 		--from=markdown --to=beamer \
 		--template=custom \
-		--output=beamer_slides.pdf
+		--output=beamer_slides_$(shell date +%Y%m%d).pdf
 
 beamer_bib:
 	pandoc *.md \
@@ -11,7 +11,7 @@ beamer_bib:
 		--from=markdown --to=beamer \
 		--template=custom \
 		--filter=pandoc-citeproc --bibliography=bibliography.bib \
-		--output=beamer_bib_slides.pdf
+		--output=beamer_bib_slides_$(shell date +%Y%m%d).pdf
 
 html:
 	pandoc *.md \
@@ -19,7 +19,7 @@ html:
 		--slide-level=2 --self-contained --mathml \
 		--variable revealjs-url=${HOME}/.pandoc/revealjs \
 		--variable theme=white \
-		--output=html_slides.html
+		--output=html_slides_$(shell date +%Y%m%d).html
 
 html_bib:
 	pandoc *.md \
@@ -28,7 +28,7 @@ html_bib:
 		--variable revealjs-url=${HOME}/.pandoc/revealjs \
 		--variable theme=white \
 		--filter=pandoc-citeproc --bibliography=bibliography.bib \
-		--output=html_bib_slides.html
+		--output=html_bib_slides_$(shell date +%Y%m%d).html
 
 manuscript:
 	pandoc *.md \
