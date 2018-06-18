@@ -33,9 +33,10 @@ using Pandoc's support for custom templates. This includes
            installing Make as part of the [Cygwin
            environment](https://www.cygwin.com/) is probably the easiest way
            to get it.
-    - Install [the reveal.js library](https://github.com/hakimel/reveal.js/)
-      into a folder at `$HOME/.pandoc/revealjs`. This may not be necessary,
-      but in the past, I couldn't get reveal.js to be used out of the box.
+    - If you want to "host"/source the Javascript for your reveal.js presentation
+      locally, download [the reveal.js
+      library](https://github.com/hakimel/reveal.js/) into a local folder
+      called `reveal.js`.
 
 2. Clone a copy of this repo, e.g.
 
@@ -44,9 +45,10 @@ using Pandoc's support for custom templates. This includes
 3. Copy the `templates` folder to your `$HOME/.pandoc` folder.
 
 4. Copy the `Makefile` file to the same folder that contains your Markdown
-   files. Note that you will have to do this for every project you want to
-   use these templates in...but that means you now have a consistent, easy,
-   and reproducible way to build all your documents!
+   files. Note that you will have to do this for every project you want to use
+   these templates in...but that means you now have a consistent, easy, and
+   reproducible way to build all your documents! You could also just use a
+   symbolic link to where you downloaded the Makefile
 
 5. Now you're ready to [Use](#Usage) the templates!
 
@@ -62,26 +64,23 @@ using Pandoc's support for custom templates. This includes
 
 ```{bash}
     make beamer
-    make beamer_bib
     make html
-    make html_bib
     make manuscript
-    make manuscript_bib
-    make manuscript_double
-    make manuscript_double_bib
+    make manuscript-double
+    make revealjs-local # Note: requires a local "reveal.js" installation
+    make revealjs-online
 ```
 
-- Note: Just to be clear, this builds every Markdown file in the directory where the
+- Note: Just to be clear, this builds EVERY Markdown file in the directory where the
   Makefile is run **into a single resulting document**.
 
 #### BibTeX usage
 
-- The "recipes" that end in `_bib` mean that BibTeX will be also be run.
-  However, if you want BibTeX support, be aware:
-    1. you need to include a `bibliography.bib` file in the current folder,
-       and
-    2. the build process will **fail** if you do not have a file of that type
-       present.
+- This script automatically looks for a file called `bibliography.bib`, and
+  based on its presence, decides to call BibTeX or not. However, note that if
+  you have BibTex references in LaTeX in your Markdown file, but no
+  corresponding `bibliography.bib` file, then your LaTeX compiler (through
+  Pandoc) will give an error.
 
 ## Examples
 
