@@ -20,7 +20,7 @@ using Pandoc's support for custom templates. This includes
 1. Install the necessary software:
     - Install [Pandoc](http://pandoc.org/)
     - Install the Pandoc extension
-      [pandoc-citeproc](https://github.com/jgm/pandoc-citeproc) (TODO this
+      [pandoc-citeproc](https://github.com/jgm/pandoc-citeproc) (todo this
       may not be necessary?)
     - Install LaTeX if you don't have it already. Some ways to get it include
       [TeX Live](https://www.tug.org/texlive/) and
